@@ -2,7 +2,7 @@
 Unofficial NuGet package for Sentry SDK for C/C++
 =================================================
 
-[![NuGet Version and Downloads count](https://buildstats.info/nuget/Tools.InnoSetup)](https://www.nuget.org/packages/Tools.InnoSetup)  [![Github Workflow Build Status](https://github.com/vslavik/nuget-tools-innosetup/workflows/Build%20NuGet%20package/badge.svg)](https://github.com/vslavik/nuget-tools-innosetup/actions)
+[![NuGet Version and Downloads count](https://buildstats.info/nuget/Unofficial.Sentry.Native)](https://www.nuget.org/packages/Unofficial.Sentry.Native)  [![Build package](https://github.com/vslavik/nuget-sentry-native/actions/workflows/build-package.yml/badge.svg)](https://github.com/vslavik/nuget-sentry-native/actions/workflows/build-package.yml)
 
 This is an unofficial package of the Sentry native SDK, intended for use as
 a NuGet dependency. It bundles sentry-cli tool too.
@@ -16,5 +16,5 @@ How to install
 --------------
 
 ```
-dotnet add package sentry-native.unofficial
+dotnet add package Unofficial.Sentry.Native
 ```

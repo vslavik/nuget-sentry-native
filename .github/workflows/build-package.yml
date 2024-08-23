@@ -1,0 +1,52 @@
+name: Build package
+
+on: [push, pull_request]
+
+jobs:
+  sentry-cli:
+    name: Build sentry-cli
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable-x86_64-pc-windows-msvc
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: sentry-cli
+      - name: Run cargo build
+        run: |
+          cd sentry-cli
+          cargo build --release --locked
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sentry-cli.exe
+          path: sentry-cli/target/release/sentry-cli.exe
+
+  native-sdk:
+    name: Build SDK
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: ./sentry-native
+    strategy:
+      matrix:
+        platform: [Win32, x64]
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
+    - name: Configure CMake
+      run: cmake -B build -A ${{ matrix.platform }} -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    - name: Build
+      run: cmake --build build --parallel --config RelWithDebInfo
+    - name: Install
+      run: cmake --install build --prefix install --config RelWithDebInfo
+    - name: Archive binaries
+      uses: actions/upload-artifact@v4
+      with:
+        name: sentry-native-${{ matrix.platform }}
+        path: sentry-native/install/
