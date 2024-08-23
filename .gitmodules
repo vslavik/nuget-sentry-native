@@ -1,0 +1,3 @@
+[submodule "sentry-cli"]
+	path = sentry-cli
+	url = https://github.com/getsentry/sentry-cli.git
