@@ -1,0 +1,10 @@
+This nuget package in itself and its support files are in the public domain.
+
+The built binaries contain sentry-native and sentry-cli, their licenses
+are as follows:
+
+sentry-native license:
+https://github.com/getsentry/sentry-native/blob/master/LICENSE
+
+sentry-cli license:
+https://github.com/getsentry/sentry-cli/blob/master/LICENSE
