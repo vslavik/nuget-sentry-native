@@ -1,3 +1,6 @@
 [submodule "sentry-cli"]
 	path = sentry-cli
 	url = https://github.com/getsentry/sentry-cli.git
+[submodule "sentry-native"]
+	path = sentry-native
+	url = https://github.com/getsentry/sentry-native.git
