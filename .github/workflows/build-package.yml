@@ -40,7 +40,7 @@ jobs:
       with:
         submodules: 'recursive'
     - name: Configure CMake
-      run: cmake -B build -A ${{ matrix.platform }} -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      run: cmake -B build -A ${{ matrix.platform }} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DSENTRY_BUILD_EXAMPLES=OFF -DSENTRY_BUILD_TESTS=OFF
     - name: Build
       run: cmake --build build --parallel --config RelWithDebInfo
     - name: Install
