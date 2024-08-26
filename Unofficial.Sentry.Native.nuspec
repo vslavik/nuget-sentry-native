@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Unofficial.Sentry.Native</id>
+        <version>0.7.8</version>
+        <title>Sentry native SDK for C/C++ (unofficial)</title>
+        <authors>Vaclav Slavik, Sentry</authors>
+        <license type="file">license.txt</license>
+        <readme>README.md</readme>
+        <projectUrl>https://github.com/vslavik/nuget-sentry-native</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <summary>Sentry native SDK for C/C++ (unofficial).</summary>
+        <description>Inno Setup tools packaged for NuGet.
+
+This is an unofficial package of the Sentry native SDK, intended for use as
+a NuGet dependency. It bundles sentry-cli tool too.
+        </description>
+        <copyright>Sentry</copyright>
+        <language>en-US</language>
+        <tags>sentry</tags>
+    </metadata>
+
+    <files>
+        <file src="license.txt" target="" />
+        <file src="README.md" target="" />
+        <file src="Unofficial.Sentry.Native.props" target="build" />
+        <file src="Unofficial.Sentry.Native.targets" target="build\native\" />
+        <file src="sentry-cli.exe" target="tools" />
+        <file src="x64\include\*.h" target="build\native\include\" />
+        <file src="x64\bin\*" target="build\native\x64\" />
+        <file src="x64\lib\*.lib" target="build\native\x64\" />
+        <file src="Win32\bin\*" target="build\native\Win32\" />
+        <file src="Win32\lib\*.lib" target="build\native\Win32\" />
+    </files>
+</package>

@@ -22,7 +22,7 @@ jobs:
           cargo build --release --locked
       - uses: actions/upload-artifact@v4
         with:
-          name: sentry-cli.exe
+          name: sentry-cli
           path: sentry-cli/target/release/sentry-cli.exe
 
   native-sdk:
@@ -50,3 +50,34 @@ jobs:
       with:
         name: sentry-native-${{ matrix.platform }}
         path: sentry-native/install/
+
+  build-nuget:
+    name: Build NuGet package
+    runs-on: windows-latest
+    needs: [sentry-cli, native-sdk]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Fetch SDK binaries (Win32)
+        uses: actions/download-artifact@v4
+        with:
+          name: sentry-native-Win32
+          path: Win32
+      - name: Fetch SDK binaries (x64)
+        uses: actions/download-artifact@v4
+        with:
+          name: sentry-native-x64
+          path: x64
+      - name: Fetch sentry-cli
+        uses: actions/download-artifact@v4
+        with:
+          name: sentry-cli
+      - name: List available files
+        run: gci . -Recurse -File
+      - name: Build NuGet package
+        run: nuget pack Unofficial.Sentry.Native.nuspec -Verbosity detailed
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuget-package
+          path: "*.nupkg"
