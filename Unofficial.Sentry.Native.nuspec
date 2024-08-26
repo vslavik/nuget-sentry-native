@@ -9,12 +9,9 @@
         <readme>README.md</readme>
         <projectUrl>https://github.com/vslavik/nuget-sentry-native</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <summary>Sentry native SDK for C/C++ (unofficial).</summary>
-        <description>Inno Setup tools packaged for NuGet.
-
-This is an unofficial package of the Sentry native SDK, intended for use as
-a NuGet dependency. It bundles sentry-cli tool too.
-        </description>
+        <summary>Sentry native SDK for C/C++ (unofficial)</summary>
+        <description>This is an unofficial package of the Sentry native SDK for C/C++ (unofficial), intended for use as
+a NuGet dependency. It bundles sentry-cli tool too.</description>
         <copyright>Sentry</copyright>
         <language>en-US</language>
         <tags>sentry</tags>
