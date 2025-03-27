@@ -2,7 +2,9 @@
 Unofficial NuGet package for Sentry SDK for C/C++
 =================================================
 
-[![NuGet Version and Downloads count](https://buildstats.info/nuget/Unofficial.Sentry.Native)](https://www.nuget.org/packages/Unofficial.Sentry.Native)  [![Build package](https://github.com/vslavik/nuget-sentry-native/actions/workflows/build-package.yml/badge.svg)](https://github.com/vslavik/nuget-sentry-native/actions/workflows/build-package.yml)
+[![NuGet Version](https://img.shields.io/nuget/v/Unofficial.Sentry.Native)](https://www.nuget.org/packages/Unofficial.Sentry.Native)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Unofficial.Sentry.Native)](https://www.nuget.org/packages/Unofficial.Sentry.Native)
+[![Build package](https://github.com/vslavik/nuget-sentry-native/actions/workflows/build-package.yml/badge.svg)](https://github.com/vslavik/nuget-sentry-native/actions/workflows/build-package.yml)
 
 This is an unofficial package of the Sentry native SDK, intended for use as a NuGet dependency.
 
